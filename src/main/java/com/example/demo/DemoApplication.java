@@ -21,10 +21,11 @@ public class DemoApplication {
 
 		@Override
 		protected void configure(HttpSecurity http) throws Exception {
+			http.cors();
 			http.csrf().disable()
 					.addFilterAfter(new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class)
 					.authorizeRequests()
-					.antMatchers(HttpMethod.POST, "/user").permitAll()
+					.antMatchers(HttpMethod.POST, "/credentials").permitAll()
 					.anyRequest().authenticated();
 		}
 	}

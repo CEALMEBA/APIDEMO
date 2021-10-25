@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 @RestController
-@RequestMapping("Admin")
+@RequestMapping("admin")
 public class AdminCrontoller {
 
     @Autowired
@@ -20,13 +20,13 @@ public class AdminCrontoller {
         return ResponseEntity.status(HttpStatus.CREATED).body(service.createAdmin(ad));
     }
 
-    @PutMapping("{adminId}")
+    @PutMapping("/{adminId}")
     public ResponseEntity updateAdmin(@PathVariable (name = "adminId", required = true) long adminId,
                                          @RequestBody Admin ad){
         service.updateAdmin(adminId,ad);
         return ResponseEntity.status(HttpStatus.OK).build();
     }
-    @DeleteMapping("{adminId}")
+    @DeleteMapping("/{adminId}")
     public ResponseEntity deleteAdmin(@PathVariable(name = "adminId", required = true) long adminId){
         service.deleteAdmin(adminId);
         return ResponseEntity.status(HttpStatus.OK).build();
@@ -37,7 +37,7 @@ public class AdminCrontoller {
         return ResponseEntity.status(HttpStatus.OK).body(service.findAll());
     }
 
-    @GetMapping("{AdminId}")
+    @GetMapping("/{adminId}")
     public ResponseEntity getOneAdmin(@PathVariable (name = "adminId", required = true) long adminId){
         return ResponseEntity.status(HttpStatus.OK).body(service.getOneAdmin(adminId));
     }

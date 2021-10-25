@@ -15,7 +15,7 @@ import javax.persistence.*;
 public class AdminDB {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
     @Column(name = "Names")
     private String Names;
     @Column(name = "Fullname")

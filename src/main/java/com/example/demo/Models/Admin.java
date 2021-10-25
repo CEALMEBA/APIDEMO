@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Admin {
-    private int id;
+    private long id;
     private String Names;
     private String Fullname;
     private String Area;

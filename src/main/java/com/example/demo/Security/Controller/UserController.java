@@ -1,4 +1,4 @@
-package com.example.demo.Security.Controller;
+/*package com.example.demo.Security.Controller;
 
 import java.util.Date;
 import java.util.List;
@@ -16,8 +16,8 @@ import io.jsonwebtoken.SignatureAlgorithm;
 
 @RestController
 public class UserController {
-    @PostMapping("user")
-    public User login(@RequestParam("userr") String username, @RequestParam("celameba") String pwd) {
+    @PostMapping(path="user")
+    public User login(@RequestParam("user") String username, @RequestParam("password") String pwd) {
 
         String token = getJWTToken(username);
         User user = new User();
@@ -47,4 +47,4 @@ public class UserController {
 
         return "Bearer " + token;
     }
-}
+}*/
